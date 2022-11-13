@@ -46,4 +46,103 @@ class Tarea
      * @var string
      */
     private $detalle;
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitulo()
+    {
+        return $this->titulo;
+    }
+
+    /**
+     * @param string $titulo
+     * @return Tarea
+     */
+    public function setTitulo($titulo)
+    {
+        $this->titulo = $titulo;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getEmpleado()
+    {
+        return $this->empleado;
+    }
+
+    /**
+     * @param int $empleado
+     * @return Tarea
+     */
+    public function setEmpleado($empleado)
+    {
+        $this->empleado = $empleado;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCodigo()
+    {
+        return $this->codigo;
+    }
+
+    /**
+     * @param int $codigo
+     * @return Tarea
+     */
+    public function setCodigo($codigo)
+    {
+        $this->codigo = $codigo;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getTiempoEstimado()
+    {
+        return $this->tiempoEstimado;
+    }
+
+    /**
+     * @param \DateTime $tiempoEstimado
+     * @return Tarea
+     */
+    public function setTiempoEstimado($tiempoEstimado)
+    {
+        $this->tiempoEstimado = $tiempoEstimado;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDetalle()
+    {
+        return $this->detalle;
+    }
+
+    /**
+     * @param string $detalle
+     * @return Tarea
+     */
+    public function setDetalle($detalle)
+    {
+        $this->detalle = $detalle;
+        return $this;
+    }
+
 }
