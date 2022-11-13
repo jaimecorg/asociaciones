@@ -33,4 +33,66 @@ class Categoria
      * @var bool
      */
     private $archivado;
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    /**
+     * @param string $descripcion
+     * @return Categoria
+     */
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAbreviatura()
+    {
+        return $this->abreviatura;
+    }
+
+    /**
+     * @param string $abreviatura
+     * @return Categoria
+     */
+    public function setAbreviatura($abreviatura)
+    {
+        $this->abreviatura = $abreviatura;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isArchivado()
+    {
+        return $this->archivado;
+    }
+
+    /**
+     * @param bool $archivado
+     * @return Categoria
+     */
+    public function setArchivado($archivado)
+    {
+        $this->archivado = $archivado;
+        return $this;
+    }
 }
