@@ -1,6 +1,7 @@
 <?php
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -48,8 +49,19 @@ class Tarea
     private $detalle;
 
     /**
-     * @return int
+     * @ORM\OneToOne(targetEntity="Categoria")
+     * @ORM\JoinColumn(nullable=false, unique=true)
+     * @var Categoria
      */
+    private $etiquetas;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Categoria", mappedBy="tareas")
+     * @var Categoria[]|Collection
+     */
+    private $responsabilidades;
+
+
     public function getId(): ?int
     {
         return $this->id;

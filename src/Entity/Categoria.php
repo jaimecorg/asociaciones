@@ -35,6 +35,13 @@ class Categoria
     private $archivado;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Tarea", inversedBy="etiquetas")
+     * @ORM\JoinColumn(nullable=false)
+     * @var Tarea
+     */
+    private $tareas;
+
+    /**
      * @return int
      */
     public function getId(): ?int
