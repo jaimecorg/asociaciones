@@ -41,6 +41,14 @@ class Empleado
     private $estaActivo;
 
     /**
+     * @ORM\OneToOne(targetEntity="Empleado")
+     * @ORM\JoinColumn(nullable=false, unique=true)
+     * @var Empleado
+     */
+    private $sustituto;
+
+
+    /**
      * @return int
      */
     public function getId(): ?int
