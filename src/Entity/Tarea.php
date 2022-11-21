@@ -61,6 +61,16 @@ class Tarea
      */
     private $responsabilidades;
 
+    /**
+     * @param Categoria $etiquetas
+     * @param Categoria[]|Collection $responsabilidades
+     */
+    public function __construct(Categoria $etiquetas, $responsabilidades)
+    {
+        $this->etiquetas = $etiquetas;
+        $this->responsabilidades = $responsabilidades;
+    }
+
 
     public function getId(): ?int
     {
@@ -103,57 +113,72 @@ class Tarea
         return $this;
     }
 
-    /**
-     * @return int
-     */
     public function getCodigo(): ?int
     {
         return $this->codigo;
     }
 
-    /**
-     * @param int $codigo
-     * @return Tarea
-     */
     public function setCodigo($codigo)
     {
         $this->codigo = $codigo;
         return $this;
     }
 
-    /**
-     * @return \DateTime
-     */
     public function getTiempoEstimado(): ?\DateTime
     {
         return $this->tiempoEstimado;
     }
 
-    /**
-     * @param \DateTime $tiempoEstimado
-     * @return Tarea
-     */
     public function setTiempoEstimado($tiempoEstimado)
     {
         $this->tiempoEstimado = $tiempoEstimado;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getDetalle(): ?string
     {
         return $this->detalle;
     }
 
-    /**
-     * @param string $detalle
-     * @return Tarea
-     */
     public function setDetalle($detalle)
     {
         $this->detalle = $detalle;
+        return $this;
+    }
+
+    /**
+     * @return Categoria
+     */
+    public function getEtiquetas(): Categoria
+    {
+        return $this->etiquetas;
+    }
+
+    /**
+     * @param Categoria $etiquetas
+     * @return Tarea
+     */
+    public function setEtiquetas(Categoria $etiquetas): Tarea
+    {
+        $this->etiquetas = $etiquetas;
+        return $this;
+    }
+
+    /**
+     * @return Categoria[]|Collection
+     */
+    public function getResponsabilidades()
+    {
+        return $this->responsabilidades;
+    }
+
+    /**
+     * @param Categoria[]|Collection $responsabilidades
+     * @return Tarea
+     */
+    public function setResponsabilidades($responsabilidades)
+    {
+        $this->responsabilidades = $responsabilidades;
         return $this;
     }
 

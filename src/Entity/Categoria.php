@@ -42,64 +42,93 @@ class Categoria
     private $tareas;
 
     /**
-     * @return int
+     * @ORM\OneToOne(targetEntity="Empleado")
+     * @ORM\JoinColumn(nullable=false, unique=true)
+     * @var Empleado
      */
+    private $empleado;
+
+    /**
+     * @param Tarea $tareas
+     */
+    public function __construct(Tarea $tareas)
+    {
+        $this->tareas = $tareas;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getDescripcion(): ?string
     {
         return $this->descripcion;
     }
 
-    /**
-     * @param string $descripcion
-     * @return Categoria
-     */
     public function setDescripcion($descripcion)
     {
         $this->descripcion = $descripcion;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getAbreviatura(): ?string
     {
         return $this->abreviatura;
     }
 
-    /**
-     * @param string $abreviatura
-     * @return Categoria
-     */
     public function setAbreviatura($abreviatura)
     {
         $this->abreviatura = $abreviatura;
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function isArchivado()
     {
         return $this->archivado;
     }
 
-    /**
-     * @param bool $archivado
-     * @return Categoria
-     */
     public function setArchivado($archivado)
     {
         $this->archivado = $archivado;
         return $this;
     }
+
+    /**
+     * @return Tarea
+     */
+    public function getTareas(): Tarea
+    {
+        return $this->tareas;
+    }
+
+    /**
+     * @param Tarea $tareas
+     * @return Categoria
+     */
+    public function setTareas(Tarea $tareas): Categoria
+    {
+        $this->tareas = $tareas;
+        return $this;
+    }
+
+    /**
+     * @return Empleado
+     */
+    public function getEmpleado(): Empleado
+    {
+        return $this->empleado;
+    }
+
+    /**
+     * @param Empleado $empleado
+     * @return Categoria
+     */
+    public function setEmpleado(Empleado $empleado): Categoria
+    {
+        $this->empleado = $empleado;
+        return $this;
+    }
+
+
 }
