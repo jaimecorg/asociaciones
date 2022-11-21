@@ -128,4 +128,15 @@ class Empleado
         return $this;
     }
 
+    public function getSustituto(): Empleado
+    {
+        return $this->sustituto;
+    }
+
+    public function setSustituto(Empleado $sustituto): Empleado
+    {
+        $this->sustituto = $sustituto;
+        return $this;
+    }
+
 }
