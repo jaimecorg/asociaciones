@@ -13,31 +13,31 @@ class Categoria
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @var int
+     * @var int|null
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=50)
-     * @var string
+     * @var string|null
      */
     private $descripcion;
     /**
      * @ORM\Column(type="string", length=20, unique=true)
-     * @var string
+     * @var string|null
      */
     private $abreviatura;
 
     /**
      * @ORM\Column(type="boolean")
-     * @var bool
+     * @var bool|null
      */
     private $archivado;
 
     /**
      * @return int
      */
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -45,7 +45,7 @@ class Categoria
     /**
      * @return string
      */
-    public function getDescripcion()
+    public function getDescripcion(): ?string
     {
         return $this->descripcion;
     }
@@ -63,7 +63,7 @@ class Categoria
     /**
      * @return string
      */
-    public function getAbreviatura()
+    public function getAbreviatura(): ?string
     {
         return $this->abreviatura;
     }

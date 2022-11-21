@@ -13,7 +13,7 @@ class Empleado
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @var int
+     * @var int|null
      */
     private $id;
 
@@ -24,26 +24,26 @@ class Empleado
     private $nombre;
     /**
      * @ORM\Column(type="string", length=80)
-     * @var string
+     * @var string|null
      */
     private $apellidos;
 
     /**
      * @ORM\Column(type="date", nullable=true)
-     * @var \DateTime
+     * @var \DateTime|null
      */
     private $fechaNacimiento;
 
     /**
      * @ORM\Column(type="boolean")
-     * @var bool
+     * @var bool|null
      */
     private $estaActivo;
 
     /**
      * @return int
      */
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -51,7 +51,7 @@ class Empleado
     /**
      * @return string
      */
-    public function getNombre()
+    public function getNombre(): ?string
     {
         return $this->nombre;
     }
@@ -69,7 +69,7 @@ class Empleado
     /**
      * @return string
      */
-    public function getApellidos()
+    public function getApellidos(): ?string
     {
         return $this->apellidos;
     }
@@ -87,7 +87,7 @@ class Empleado
     /**
      * @return \DateTime
      */
-    public function getFechaNacimiento()
+    public function getFechaNacimiento(): ?\DateTime
     {
         return $this->fechaNacimiento;
     }

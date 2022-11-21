@@ -13,44 +13,44 @@ class Tarea
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @var int
+     * @var int|null
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=50)
-     * @var string
+     * @var string|null
      */
     private $titulo;
 
     /**
      * @ORM\Column(type="integer")
-     * @var int
+     * @var int|null
      */
     private $empleado;
 
     /**
      * @ORM\Column(type="integer", unique=true)
-     * @var int
+     * @var int|null
      */
     private $codigo;
 
     /**
      * @ORM\Column(type="time", nullable=true)
-     * @var \DateTime
+     * @var \DateTime|null
      */
     private $tiempoEstimado;
 
     /**
      * @ORM\Column(type="text")
-     * @var string
+     * @var string|null
      */
     private $detalle;
 
     /**
      * @return int
      */
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -58,7 +58,7 @@ class Tarea
     /**
      * @return string
      */
-    public function getTitulo()
+    public function getTitulo(): ?string
     {
         return $this->titulo;
     }
@@ -76,7 +76,7 @@ class Tarea
     /**
      * @return int
      */
-    public function getEmpleado()
+    public function getEmpleado(): ?string
     {
         return $this->empleado;
     }
@@ -94,7 +94,7 @@ class Tarea
     /**
      * @return int
      */
-    public function getCodigo()
+    public function getCodigo(): ?int
     {
         return $this->codigo;
     }
@@ -112,7 +112,7 @@ class Tarea
     /**
      * @return \DateTime
      */
-    public function getTiempoEstimado()
+    public function getTiempoEstimado(): ?\DateTime
     {
         return $this->tiempoEstimado;
     }
@@ -130,7 +130,7 @@ class Tarea
     /**
      * @return string
      */
-    public function getDetalle()
+    public function getDetalle(): ?string
     {
         return $this->detalle;
     }
